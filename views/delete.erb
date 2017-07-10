@@ -1,0 +1,20 @@
+<h2>Please choose which recipe you'd like to delete:</h2>
+<ul>
+  <% @@cookbook.all.each_with_index do |x, ind| %>
+    <li>
+      <%= ind + 1 %>. <%=x.name%>. Prep and cooking time: <%=x.time%> <br>
+    </li>
+  <% end %>
+</ul>
+<form action="/delete" method="post">
+  <div>
+    <label for="name">Number:</label>
+    <input type="text" id="number" name="number" />
+  <div>
+  <div class="button">
+    <button type="submit">Submit</button>
+  </div>
+</form>
+
+
+

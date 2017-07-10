@@ -1,0 +1,9 @@
+
+<ul>
+  <% @@cookbook.all.each_with_index do |x, ind| %>
+    <li>
+      <%= ind + 1 %>. <%=x.name%>. Prep and cooking time: <%=x.time%> <br>
+      <%= x.description %>
+    </li>
+  <% end %>
+</ul>

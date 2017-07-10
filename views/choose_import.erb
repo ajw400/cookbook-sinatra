@@ -1,0 +1,20 @@
+<h2>Please choose the number of the recipe you'd like to import:</h2>
+<ul>
+  <% @@result.each_with_index do |x, ind| %>
+    <li>
+      <%= ind + 1 %>. <%=x[0]%>. Prep and cooking time: <%=x[2]%> <br>
+      <%= x[1] %>
+    </li>
+  <% end %>
+</ul>
+
+<form action="/choose_import" method="post">
+  <div>
+    <label for="choice">Your choice (number):</label>
+    <input type="text" id="choice" name="choice" />
+  <div>
+  <div class="button">
+    <button type="submit">Submit</button>
+  </div>
+</form>
+
