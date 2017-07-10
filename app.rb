@@ -37,6 +37,10 @@ get '/import' do
   erb :import
 end
 
+get '/mark_as_tried'  do
+  erb :mark_as_tried
+end
+
 post '/import' do
   @@result = Parsing.call(params["ingredient"])
   erb :choose_import
@@ -44,6 +48,11 @@ end
 
 post '/delete' do
  @@cookbook.remove_recipe(params["number"].to_i - 1)
+ redirect '/'
+end
+
+post '/mark_as_tried' do
+ @@cookbook.mark_as_tried(params["number"].to_i - 1)
  redirect '/'
 end
 

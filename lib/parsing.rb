@@ -13,6 +13,7 @@ class Parsing
       description = element.search('.m_texte_resultat')
       time = element.search('.m_detail_time')
       result << [title.text.strip, description.text.strip, time.text.strip]
+    end
     return result
   end
 end

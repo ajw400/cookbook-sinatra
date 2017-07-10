@@ -1,7 +1,5 @@
 require "csv"
 require_relative "recipe"
-require_relative "controller"
-require_relative "view"
 
 class Cookbook
   def initialize(csv_filename)
@@ -29,5 +27,9 @@ class Cookbook
   def remove_recipe(recipe_index)
     @recipes.delete_at(recipe_index)
     update_csv
+  end
+
+  def mark_as_tried(ind)
+    @recipes[ind].tried = true
   end
 end
